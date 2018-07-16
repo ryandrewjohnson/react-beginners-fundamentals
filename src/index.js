@@ -3,16 +3,14 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>Hello CodeSandbox: {this.props.version}</h1>
-        <h2>Start editing to see some magic happen!</h2>
-      </div>
-    );
-  }
+function App(props) {
+  return React.createElement(
+    "div",
+    { className: "App" },
+    React.createElement("h1", null, "Hello CodeSandbox: ", props.version),
+    React.createElement("h2", null, "Start editing to see some magic happen!")
+  );
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App version="1.0" />, rootElement);
+ReactDOM.render(App({ version: 1.0 }), rootElement);
