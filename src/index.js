@@ -3,7 +3,14 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-const element = <h1>Hello World!</h1>;
+function App(props) {
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox: {props.version}</h1>
+      <h2>Start editing to see some magic happen!</h2>
+    </div>
+  );
+}
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(element, rootElement);
+ReactDOM.render(<App version="1.0" />, rootElement);
