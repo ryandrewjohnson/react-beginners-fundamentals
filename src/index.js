@@ -3,23 +3,36 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-function App(props) {
-  let joke = "Here is original joke!";
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-  const onTellJoke = () => {
-    joke = "Here is my awesome new joke!";
-    console.log("joke", joke);
-  };
+    this.state = {
+      joke: "Here is original joke!"
+    };
 
-  return (
-    <div className="App">
-      <h1>Joke Generator</h1>
-      <p>Click the button below to generate joke!</p>
-      <button onClick={onTellJoke}>Tell me another joke</button>
+    this.onTellJokeClicked = this.onTellJokeClicked.bind(this);
+  }
 
-      <p>{joke}</p>
-    </div>
-  );
+  onTellJokeClicked() {
+    this.setState({
+      joke: "Here is my awesome new joke!"
+    });
+
+    console.log("joke", this.state.joke);
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Joke Generator</h1>
+        <p>Click the button below to generate joke!</p>
+        <button onClick={this.onTellJokeClicked}>Tell me another joke</button>
+
+        <p>{this.state.joke}</p>
+      </div>
+    );
+  }
 }
 
 const rootElement = document.getElementById("root");
