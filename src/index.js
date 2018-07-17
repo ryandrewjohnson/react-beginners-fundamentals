@@ -42,10 +42,14 @@ class App extends React.Component {
         <p>Click the button below to generate joke!</p>
         <button onClick={this.onTellJokeClicked}>Tell me another joke</button>
 
-        <div>
-          <label>id:</label>
-          <span>{this.state.joke.id}</span>
-        </div>
+        {this.state.joke !== null && (
+          <div>
+            <p>id: {this.state.joke.id}</p>
+            <p>type: {this.state.joke.type}</p>
+            <p>setup: {this.state.joke.setup}</p>
+            <p>punchline: {this.state.joke.punchline}</p>
+          </div>
+        )}
       </div>
     );
   }
