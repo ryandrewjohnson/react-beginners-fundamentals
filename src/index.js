@@ -12,7 +12,11 @@ function App(props) {
       <img src={logoUrl} width="200" alt="logo" />
       <h1>Hello CodeSandbox: {props.version}</h1>
 
-      {props.version < 1 && <p>You should upgrade your version</p>}
+      {props.version < 1 ? (
+        <p>You should upgrade your version</p>
+      ) : (
+        <p>Your version is up to date</p>
+      )}
 
       <h2>Start editing to see some magic happen!</h2>
     </div>
@@ -20,4 +24,4 @@ function App(props) {
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App version="0.17" />, rootElement);
+ReactDOM.render(<App version="1.0" />, rootElement);
