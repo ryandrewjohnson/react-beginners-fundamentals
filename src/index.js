@@ -6,6 +6,8 @@ import "./styles.css";
 const logoUrl =
   "https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png";
 
+const myHtml = "<strong>Strong will not be rendered!</strong>";
+
 function App(props) {
   return (
     <div className="App" tabIndex="1">
@@ -17,6 +19,8 @@ function App(props) {
       ) : (
         <p>Your version is up to date</p>
       )}
+
+      <p>{myHtml}</p>
 
       <h2>Start editing to see some magic happen!</h2>
     </div>
