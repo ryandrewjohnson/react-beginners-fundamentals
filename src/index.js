@@ -11,10 +11,13 @@ function App(props) {
     <div className="App" tabIndex="1">
       <img src={logoUrl} width="200" alt="logo" />
       <h1>Hello CodeSandbox: {props.version}</h1>
+
+      {props.version < 1 && <p>You should upgrade your version</p>}
+
       <h2>Start editing to see some magic happen!</h2>
     </div>
   );
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App version="1.0" />, rootElement);
+ReactDOM.render(<App version="0.17" />, rootElement);
