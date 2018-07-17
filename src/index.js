@@ -8,18 +8,21 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      joke: "Here is original joke!"
+      joke: "Why did the chicken cross the road!"
     };
 
     this.onTellJokeClicked = this.onTellJokeClicked.bind(this);
   }
 
   onTellJokeClicked() {
-    this.setState({
-      joke: "Here is my awesome new joke!"
-    });
-
-    console.log("joke", this.state.joke);
+    this.setState(
+      {
+        joke: "Here is my awesome new joke!"
+      },
+      () => {
+        console.log("joke", this.state.joke);
+      }
+    );
   }
 
   render() {
