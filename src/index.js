@@ -3,14 +3,13 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
+const logoUrl =
+  "https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png";
+
 function App(props) {
   return (
     <div className="App" tabIndex="1">
-      <img
-        src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png"
-        width="200"
-        alt="logo"
-      />
+      <img src={logoUrl} width="200" alt="logo" />
       <h1>Hello CodeSandbox: {props.version}</h1>
       <h2>Start editing to see some magic happen!</h2>
     </div>
