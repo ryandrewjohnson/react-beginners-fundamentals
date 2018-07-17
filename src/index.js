@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      joke: "Why did the chicken cross the road!"
+      joke: null
     };
 
     this.onTellJokeClicked = this.onTellJokeClicked.bind(this);
@@ -19,7 +19,9 @@ class App extends React.Component {
       "https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke"
     )
       .then(response => response.json())
-      .then(json => console.log(json));
+      .then(json => {
+        this.setState({ joke: json });
+      });
   }
 
   onTellJokeClicked() {
