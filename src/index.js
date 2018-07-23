@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Joke from "./Joke/Joke";
 
 import "./styles.css";
 
@@ -39,14 +40,7 @@ class App extends React.Component {
         <p>Click the button below to generate joke!</p>
         <button onClick={this.onTellJokeClicked}>Tell me another joke</button>
 
-        {this.state.joke !== null && (
-          <div>
-            <p>id: {this.state.joke.id}</p>
-            <p>type: {this.state.joke.type}</p>
-            <p>setup: {this.state.joke.setup}</p>
-            <p>punchline: {this.state.joke.punchline}</p>
-          </div>
-        )}
+        {this.state.joke !== null && <Joke joke={this.state.joke} />}
       </div>
     );
   }
