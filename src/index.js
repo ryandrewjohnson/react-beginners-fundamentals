@@ -40,7 +40,7 @@ class App extends React.Component {
         <p>Click the button below to generate joke!</p>
         <button onClick={this.onTellJokeClicked}>Tell me another joke</button>
 
-        {this.state.joke !== null && <Joke joke={this.state.joke} />}
+        <Joke joke={this.state.joke} />
       </div>
     );
   }
