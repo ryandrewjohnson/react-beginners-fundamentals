@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      joke: null
+      jokes: []
     };
 
     this.onTellJokeClicked = this.onTellJokeClicked.bind(this);
@@ -29,7 +29,7 @@ class App extends React.Component {
     )
       .then(response => response.json())
       .then(json => {
-        this.setState({ joke: json });
+        this.setState({ jokes: json });
       });
   }
 
@@ -40,7 +40,7 @@ class App extends React.Component {
         <p>Click the button below to generate joke!</p>
         <button onClick={this.onTellJokeClicked}>Tell me another joke</button>
 
-        <Joke joke={this.state.joke} />
+        {this.state.jokes.map(joke => <Joke joke={joke} />)}
       </div>
     );
   }
