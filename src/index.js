@@ -16,16 +16,16 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchJoke();
+    this.fetchJokes();
   }
 
   onTellJokeClicked() {
-    this.fetchJoke();
+    this.fetchJokes();
   }
 
-  fetchJoke() {
+  fetchJokes() {
     fetch(
-      "https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke"
+      "https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_ten"
     )
       .then(response => response.json())
       .then(json => {
