@@ -16,14 +16,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchJokes();
+    this.fetchJoke();
   }
 
   onTellJokeClicked() {
-    this.fetchJokes();
+    this.fetchJoke();
   }
 
-  fetchJokes() {
+  fetchJoke() {
     fetch("https://icanhazdadjoke.com/", {
       method: "GET",
       headers: {
@@ -39,9 +39,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Joke Generator</h1>
-        <p>Click the button below to generate joke!</p>
-        <button onClick={this.onTellJokeClicked}>Tell me another joke</button>
+        <form>
+          <h1>Doogle</h1>
+          <input type="text" placeholder="enter search term" />
+          <button>Search</button>
+          <button onClick={this.onTellJokeClicked}>I'm Feeling Funny 🤪</button>
+        </form>
 
         {this.state.joke && <p>{this.state.joke.joke}</p>}
       </div>
