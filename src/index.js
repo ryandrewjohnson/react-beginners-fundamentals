@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      jokes: []
+      joke: null
     };
 
     this.onTellJokeClicked = this.onTellJokeClicked.bind(this);
@@ -24,12 +24,15 @@ class App extends React.Component {
   }
 
   fetchJokes() {
-    fetch(
-      "https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_ten"
-    )
+    fetch("https://icanhazdadjoke.com/", {
+      method: "GET",
+      headers: {
+        Accept: "application/json"
+      }
+    })
       .then(response => response.json())
       .then(json => {
-        this.setState({ jokes: json });
+        this.setState({ joke: json });
       });
   }
 
@@ -40,7 +43,7 @@ class App extends React.Component {
         <p>Click the button below to generate joke!</p>
         <button onClick={this.onTellJokeClicked}>Tell me another joke</button>
 
-        {this.state.jokes.map(joke => <Joke joke={joke} />)}
+        {this.state.joke && <p>{this.state.joke.joke}</p>}
       </div>
     );
   }
