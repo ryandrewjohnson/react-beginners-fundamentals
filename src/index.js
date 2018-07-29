@@ -54,7 +54,11 @@ class App extends React.Component {
       <div className="App">
         <form>
           <h1>Doogle</h1>
-          <input type="text" placeholder="enter search term" />
+          <input
+            type="text"
+            placeholder="enter search term"
+            onChange={event => console.log(event.target.value)}
+          />
           <button>Search</button>
           <button type="button" onClick={this.onTellJokeClicked}>
             I'm Feeling Funny 🤪
