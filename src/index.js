@@ -9,10 +9,12 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      joke: null
+      joke: null,
+      searchTerm: ""
     };
 
     this.onTellJokeClicked = this.onTellJokeClicked.bind(this);
+    this.onSearchChange = this.onSearchChange.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +24,10 @@ class App extends React.Component {
 
   onTellJokeClicked() {
     this.fetchJoke();
+  }
+
+  onSearchChange(event) {
+    this.setState({ searchTerm: event.target.value });
   }
 
   async fetchJoke() {
@@ -57,13 +63,15 @@ class App extends React.Component {
           <input
             type="text"
             placeholder="enter search term"
-            onChange={event => console.log(event.target.value)}
+            onChange={this.onSearchChange}
           />
           <button>Search</button>
           <button type="button" onClick={this.onTellJokeClicked}>
             I'm Feeling Funny 🤪
           </button>
         </form>
+
+        <p>{this.state.searchTerm}</p>
 
         {this.state.joke && <p>{this.state.joke.joke}</p>}
       </div>
