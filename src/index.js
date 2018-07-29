@@ -46,7 +46,7 @@ class App extends React.Component {
 
     const { results: jokes } = await response.json();
 
-    console.log("jokes", jokes);
+    this.setState({ jokes });
   }
 
   render() {
