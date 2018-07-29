@@ -17,23 +17,36 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetchJoke();
+    this.searchJokes();
   }
 
   onTellJokeClicked() {
     this.fetchJoke();
   }
 
-  fetchJoke() {
-    fetch("https://icanhazdadjoke.com/", {
+  async fetchJoke() {
+    const response = await fetch("https://icanhazdadjoke.com/", {
       method: "GET",
       headers: {
         Accept: "application/json"
       }
-    })
-      .then(response => response.json())
-      .then(json => {
-        this.setState({ joke: json });
-      });
+    });
+
+    const joke = await response.json();
+    this.setState({ joke });
+  }
+
+  async searchJokes() {
+    const response = await fetch("https://icanhazdadjoke.com/search?limit=10", {
+      method: "GET",
+      headers: {
+        Accept: "application/json"
+      }
+    });
+
+    const jokes = await response.json();
+
+    console.log("jokes", jokes);
   }
 
   render() {
@@ -43,7 +56,9 @@ class App extends React.Component {
           <h1>Doogle</h1>
           <input type="text" placeholder="enter search term" />
           <button>Search</button>
-          <button onClick={this.onTellJokeClicked}>I'm Feeling Funny 🤪</button>
+          <button type="button" onClick={this.onTellJokeClicked}>
+            I'm Feeling Funny 🤪
+          </button>
         </form>
 
         {this.state.joke && <p>{this.state.joke.joke}</p>}
