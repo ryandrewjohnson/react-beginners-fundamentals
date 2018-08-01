@@ -33,7 +33,7 @@ class App extends React.Component {
 
   onSearchSubmit(event) {
     event.preventDefault();
-    console.log("search submitted!");
+    this.searchJokes();
   }
 
   async fetchJoke() {
@@ -49,12 +49,17 @@ class App extends React.Component {
   }
 
   async searchJokes() {
-    const response = await fetch("https://icanhazdadjoke.com/search?limit=10", {
-      method: "GET",
-      headers: {
-        Accept: "application/json"
+    const response = await fetch(
+      `https://icanhazdadjoke.com/search?limit=10&term=${
+        this.state.searchTerm
+      }`,
+      {
+        method: "GET",
+        headers: {
+          Accept: "application/json"
+        }
       }
-    });
+    );
 
     const { results: jokes } = await response.json();
 
