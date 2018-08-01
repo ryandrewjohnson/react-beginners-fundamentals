@@ -10,6 +10,7 @@ class App extends React.Component {
 
     this.state = {
       joke: null,
+      jokes: [],
       searchTerm: ""
     };
 
@@ -85,7 +86,7 @@ class App extends React.Component {
 
         {this.state.joke && <p>{this.state.joke.joke}</p>}
 
-        {this.state.jokes && this.state.jokes.map(item => <p>{item.joke}</p>)}
+        {this.state.jokes.map(item => <p>{item.joke}</p>)}
       </div>
     );
   }
