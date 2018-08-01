@@ -15,6 +15,7 @@ class App extends React.Component {
 
     this.onTellJokeClicked = this.onTellJokeClicked.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
+    this.onSearchSubmit = this.onSearchSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +29,11 @@ class App extends React.Component {
 
   onSearchChange(event) {
     this.setState({ searchTerm: event.target.value });
+  }
+
+  onSearchSubmit(event) {
+    event.preventDefault();
+    console.log("search submitted!");
   }
 
   async fetchJoke() {
@@ -58,7 +64,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <form>
+        <form onSubmit={this.onSearchSubmit}>
           <h1>Doogle</h1>
           <input
             type="text"
