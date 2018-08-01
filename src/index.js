@@ -20,7 +20,6 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetchJoke();
-    this.searchJokes();
   }
 
   onTellJokeClicked() {
@@ -85,6 +84,8 @@ class App extends React.Component {
         <p>{this.state.searchTerm}</p>
 
         {this.state.joke && <p>{this.state.joke.joke}</p>}
+
+        {this.state.jokes.map(item => <p>{item.joke}</p>)}
       </div>
     );
   }
