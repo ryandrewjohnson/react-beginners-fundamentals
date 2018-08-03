@@ -86,7 +86,7 @@ class App extends React.Component {
 
         {this.state.joke && <p>{this.state.joke.joke}</p>}
 
-        {this.state.jokes.map(item => <p>{item.joke}</p>)}
+        {this.state.jokes.map(item => <p key={item.id}>{item.joke}</p>)}
       </div>
     );
   }
