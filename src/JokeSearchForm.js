@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const JokeSearchForm = props => (
-  
-);  
+const JokeSearchForm = props => <h1>Hello From Joke Form</h1>;
 
 export default JokeSearchForm;

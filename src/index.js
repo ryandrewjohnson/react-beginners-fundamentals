@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Joke from "./Joke/Joke";
+import JokeSearchForm from "./JokeSearchForm";
 
 import "./styles.css";
 
@@ -77,6 +77,8 @@ class App extends React.Component {
             I'm Feeling Funny 🤪
           </button>
         </form>
+
+        <JokeSearchForm />
 
         {this.state.jokes.map(item => <p key={item.id}>{item.joke}</p>)}
       </div>
