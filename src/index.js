@@ -65,19 +65,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <form onSubmit={this.onSearchSubmit}>
-          <h1>Doogle</h1>
-          <input
-            type="text"
-            placeholder="enter search term"
-            onChange={this.onSearchChange}
-          />
-          <button>Search</button>
-          <button type="button" onClick={this.onTellJokeClicked}>
-            I'm Feeling Funny 🤪
-          </button>
-        </form>
-
         <JokeSearchForm />
 
         {this.state.jokes.map(item => <p key={item.id}>{item.joke}</p>)}
