@@ -19,10 +19,6 @@ class App extends React.Component {
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.fetchJoke();
-  }
-
   onTellJokeClicked() {
     this.fetchJoke();
   }
@@ -81,8 +77,6 @@ class App extends React.Component {
             I'm Feeling Funny 🤪
           </button>
         </form>
-
-        <p>{this.state.searchTerm}</p>
 
         {this.state.joke && <p>{this.state.joke.joke}</p>}
 
