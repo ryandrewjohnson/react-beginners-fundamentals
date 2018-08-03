@@ -21,7 +21,6 @@ class App extends React.Component {
 
   onTellJokeClicked() {
     this.fetchJoke();
-    this.setState({ jokes: [] });
   }
 
   onSearchChange(event) {
@@ -31,7 +30,6 @@ class App extends React.Component {
   onSearchSubmit(event) {
     event.preventDefault();
     this.searchJokes();
-    this.setState({ joke: null });
   }
 
   async fetchJoke() {
@@ -43,7 +41,7 @@ class App extends React.Component {
     });
 
     const joke = await response.json();
-    this.setState({ joke });
+    this.setState({ jokes: [joke] });
   }
 
   async searchJokes() {
@@ -79,8 +77,6 @@ class App extends React.Component {
             I'm Feeling Funny 🤪
           </button>
         </form>
-
-        {this.state.joke && <p>{this.state.joke.joke}</p>}
 
         {this.state.jokes.map(item => <p key={item.id}>{item.joke}</p>)}
       </div>
