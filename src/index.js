@@ -21,6 +21,7 @@ class App extends React.Component {
 
   onTellJokeClicked() {
     this.fetchJoke();
+    this.setState({ jokes: [] });
   }
 
   onSearchChange(event) {
@@ -30,6 +31,7 @@ class App extends React.Component {
   onSearchSubmit(event) {
     event.preventDefault();
     this.searchJokes();
+    this.setState({ joke: null });
   }
 
   async fetchJoke() {
