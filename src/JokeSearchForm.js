@@ -6,7 +6,7 @@ const JokeSearchForm = props => (
     <input
       type="text"
       placeholder="enter search term"
-      onChange={this.onSearchChange}
+      onChange={props.onSearchChange}
     />
     <button>Search</button>
     <button type="button" onClick={this.onTellJokeClicked}>

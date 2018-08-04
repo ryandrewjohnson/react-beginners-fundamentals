@@ -65,7 +65,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <JokeSearchForm onFormSubmit={this.onSearchSubmit} />
+        <JokeSearchForm
+          onFormSubmit={this.onSearchSubmit}
+          onSearchChange={this.onSearchChange}
+        />
 
         {this.state.jokes.map(item => <p key={item.id}>{item.joke}</p>)}
       </div>
