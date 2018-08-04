@@ -1,7 +1,7 @@
 import React from "react";
 
 const JokeSearchForm = props => (
-  <form onSubmit={this.onSearchSubmit}>
+  <form onSubmit={props.onFormSubmit}>
     <h1>Doogle</h1>
     <input
       type="text"
