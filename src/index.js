@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import JokeSearchForm from "./JokeSearchForm";
+import SearchForm from "./SearchForm";
 
 import "./styles.css";
 
@@ -61,7 +61,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <JokeSearchForm
+        <SearchForm
           onFormSubmit={this.onSearchSubmit}
           onSearchChange={this.onSearchChange}
           onFeelingLuckyClick={this.fetchJoke}

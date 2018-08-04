@@ -1,6 +1,6 @@
 import React from "react";
 
-const JokeSearchForm = props => (
+const SearchForm = props => (
   <form onSubmit={props.onFormSubmit}>
     <h1>Doogle</h1>
     <input
@@ -15,4 +15,4 @@ const JokeSearchForm = props => (
   </form>
 );
 
-export default JokeSearchForm;
+export default SearchForm;
