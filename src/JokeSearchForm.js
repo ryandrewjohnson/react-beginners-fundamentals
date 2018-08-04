@@ -9,7 +9,7 @@ const JokeSearchForm = props => (
       onChange={props.onSearchChange}
     />
     <button>Search</button>
-    <button type="button" onClick={this.onTellJokeClicked}>
+    <button type="button" onClick={props.onFeelingLuckyClick}>
       I'm Feeling Funny 🤪
     </button>
   </form>

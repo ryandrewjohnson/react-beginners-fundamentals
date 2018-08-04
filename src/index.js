@@ -14,13 +14,9 @@ class App extends React.Component {
       searchTerm: ""
     };
 
-    this.onTellJokeClicked = this.onTellJokeClicked.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
-  }
-
-  onTellJokeClicked() {
-    this.fetchJoke();
+    this.fetchJoke = this.fetchJoke.bind(this);
   }
 
   onSearchChange(event) {
@@ -68,6 +64,7 @@ class App extends React.Component {
         <JokeSearchForm
           onFormSubmit={this.onSearchSubmit}
           onSearchChange={this.onSearchChange}
+          onFeelingLuckyClick={this.fetchJoke}
         />
 
         {this.state.jokes.map(item => <p key={item.id}>{item.joke}</p>)}
