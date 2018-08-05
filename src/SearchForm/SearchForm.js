@@ -1,8 +1,8 @@
 import React from "react";
+import "./SearchForm.css";
 
 const SearchForm = props => (
   <form onSubmit={props.onFormSubmit}>
-    <h1>Doogle</h1>
     <input
       type="text"
       placeholder="enter search term"

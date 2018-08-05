@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import SearchForm from "./SearchForm";
+import SearchForm from "./SearchForm/SearchForm";
 
 import "./styles.css";
 
@@ -9,7 +9,6 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      joke: null,
       jokes: [],
       searchTerm: ""
     };
@@ -61,6 +60,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <h1>Avocado Are Awesome</h1>
+
         <SearchForm
           onFormSubmit={this.onSearchSubmit}
           onSearchChange={this.onSearchChange}
