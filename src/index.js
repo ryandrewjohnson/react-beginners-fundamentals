@@ -4,10 +4,13 @@ import ReactDOM from "react-dom";
 import "./styles.css";
 
 class App extends React.Component {
-  joke = 'Original joke goes here...';
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      joke: 'Original joke goes here...'
+    };
 
     this.onTellJoke = this.onTellJoke.bind(this);
   }
@@ -21,8 +24,7 @@ class App extends React.Component {
     })
       .then(response => response.json())
       .then(json => {
-        this.joke = json.joke;
-        console.log('joke', this.joke);
+        this.setState({ joke: json.joke});
       });
   }
 
@@ -30,7 +32,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <button onClick={this.onTellJoke}>Tell me a joke</button>
-        <p>{this.joke}</p>
+        <p>{this.state.joke}</p>
       </div>
     );
   }
