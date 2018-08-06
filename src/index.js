@@ -49,7 +49,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <button onClick={this.onTellJoke} disabled={this.state.isFetchingJoke}>Tell me a joke</button>
-        <p>{this.state.joke}</p>
+        
+        <p>{this.state.isFetchingJoke ? 'Loading joke...' : this.state.joke}</p>
       </div>
     );
   }
