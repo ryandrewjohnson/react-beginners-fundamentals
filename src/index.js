@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import "./styles.css";
 
 function App(props) {
+  let joke = 'Original joke goes here...';
 
   const onTellJoke = () => {
     fetch("https://icanhazdadjoke.com/", {
@@ -13,12 +14,16 @@ function App(props) {
       }
     })
       .then(response => response.json())
-      .then(json => console.log(json));
+      .then(json => {
+        joke = json.joke;
+        console.log('joke', joke);
+      });
   };
 
   return (
     <div className="App">
       <button onClick={onTellJoke}>Tell me a joke</button>
+      <p>{joke}</p>
     </div>
   );
 }
