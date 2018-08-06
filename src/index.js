@@ -25,6 +25,8 @@ class App extends React.Component {
   }
 
   fetchJoke() {
+    this.setState({ isFetchingJoke: true });
+    
     fetch("https://icanhazdadjoke.com/", {
       method: "GET",
       headers: {
