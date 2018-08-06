@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-function App(props) {
-  let joke = 'Original joke goes here...';
+class App extends React.Component {
+  joke = 'Original joke goes here...';
 
-  const onTellJoke = () => {
+  onTellJoke() {
     fetch("https://icanhazdadjoke.com/", {
       method: "GET",
       headers: {
@@ -15,17 +15,19 @@ function App(props) {
     })
       .then(response => response.json())
       .then(json => {
-        joke = json.joke;
-        console.log('joke', joke);
+        this.joke = json.joke;
+        console.log('joke', this.joke);
       });
-  };
+  }
 
-  return (
-    <div className="App">
-      <button onClick={onTellJoke}>Tell me a joke</button>
-      <p>{joke}</p>
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <button onClick={this.onTellJoke}>Tell me a joke</button>
+        <p>{this.joke}</p>
+      </div>
+    );
+  }
 }
 
 const rootElement = document.getElementById("root");
