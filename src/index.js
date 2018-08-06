@@ -6,6 +6,12 @@ import "./styles.css";
 class App extends React.Component {
   joke = 'Original joke goes here...';
 
+  constructor(props) {
+    super(props);
+
+    this.onTellJoke = this.onTellJoke.bind(this);
+  }
+
   onTellJoke() {
     fetch("https://icanhazdadjoke.com/", {
       method: "GET",
