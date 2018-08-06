@@ -9,13 +9,21 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      joke: 'Original joke goes here...'
+      joke: null
     };
 
     this.onTellJoke = this.onTellJoke.bind(this);
   }
 
+  componentDidMount() {
+    this.fetchJoke();
+  }
+
   onTellJoke() {
+    this.fetchJoke();
+  }
+
+  fetchJoke() {
     fetch("https://icanhazdadjoke.com/", {
       method: "GET",
       headers: {
