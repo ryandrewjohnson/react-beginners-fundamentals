@@ -39,6 +39,9 @@ class App extends React.Component {
           isFetchingJoke: false,
           joke: json.joke
         });
+      })
+      .catch(err => {
+        this.setState({ isFetchingJoke: false });
       });
   }
 
