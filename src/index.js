@@ -26,7 +26,7 @@ class App extends React.Component {
 
   fetchJoke() {
     this.setState({ isFetchingJoke: true });
-    
+
     fetch("https://icanhazdadjoke.com/", {
       method: "GET",
       headers: {
@@ -35,7 +35,10 @@ class App extends React.Component {
     })
       .then(response => response.json())
       .then(json => {
-        this.setState({ joke: json.joke});
+        this.setState({ 
+          isFetchingJoke: false,
+          joke: json.joke
+        });
       });
   }
 
