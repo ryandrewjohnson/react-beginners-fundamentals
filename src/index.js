@@ -4,9 +4,14 @@ import ReactDOM from "react-dom";
 import "./styles.css";
 
 function App(props) {
+
+  const onTellJoke = () => {
+    console.log('clicked');
+  };
+
   return (
     <div className="App">
-      <button onClick={() => console.log('clicked')}>Tell me a joke</button>
+      <button onClick={onTellJoke}>Tell me a joke</button>
     </div>
   );
 }
