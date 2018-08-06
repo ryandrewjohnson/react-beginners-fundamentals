@@ -6,7 +6,14 @@ import "./styles.css";
 function App(props) {
 
   const onTellJoke = () => {
-    console.log('clicked');
+    fetch("https://icanhazdadjoke.com/", {
+      method: "GET",
+      headers: {
+        Accept: "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(json => console.log(json));
   };
 
   return (
