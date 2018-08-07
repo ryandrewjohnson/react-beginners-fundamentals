@@ -57,7 +57,8 @@ class App extends React.Component {
     })
     .then(response => response.json())
     .then(json => {
-      console.log('search results:', json);
+      const jokes = json.results;
+      console.log('search results:', jokes);
     })
     .catch(err => {
       this.setState({ isFetchingJoke: false });
