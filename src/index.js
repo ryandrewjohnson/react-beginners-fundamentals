@@ -48,7 +48,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <button onClick={this.onTellJoke} disabled={this.state.isFetchingJoke}>Tell me a joke</button>
+        <form>
+          <input type="text" placeholder="Enter search term..." />
+          <button>Search</button>
+          <button onClick={this.onTellJoke} disabled={this.state.isFetchingJoke}>Tell me a joke</button>
+        </form>
         
         <p>{this.state.isFetchingJoke ? 'Loading joke...' : this.state.joke}</p>
       </div>
