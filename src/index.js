@@ -15,6 +15,7 @@ class App extends React.Component {
     };
 
     this.onTellJoke = this.onTellJoke.bind(this);
+    this.onSearchChange = this.onSearchChange.bind(this);
   }
 
   componentDidMount() {
