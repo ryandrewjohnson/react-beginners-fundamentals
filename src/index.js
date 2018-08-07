@@ -72,7 +72,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <form>
-          <input type="text" placeholder="Enter search term..." />
+          <input type="text" placeholder="Enter search term..." onChange={(event) => console.log(event.target.value)} />
           <button>Search</button>
           <button onClick={this.onTellJoke} disabled={this.state.isFetchingJoke}>Tell me a joke</button>
         </form>
