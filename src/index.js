@@ -10,7 +10,8 @@ class App extends React.Component {
 
     this.state = {
       isFetchingJoke: false,
-      joke: null
+      joke: null,
+      searchTerm: ''
     };
 
     this.onTellJoke = this.onTellJoke.bind(this);
@@ -23,6 +24,10 @@ class App extends React.Component {
 
   onTellJoke() {
     this.fetchJoke();
+  }
+
+  onSearchChange(event) {
+    this.setState({ searchTerm: event.target.value });
   }
 
   fetchJoke() {
@@ -72,7 +77,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <form>
-          <input type="text" placeholder="Enter search term..." onChange={(event) => console.log(event.target.value)} />
+          <input type="text" placeholder="Enter search term..." onChange={this.onSearchChange} />
           <button>Search</button>
           <button onClick={this.onTellJoke} disabled={this.state.isFetchingJoke}>Tell me a joke</button>
         </form>
