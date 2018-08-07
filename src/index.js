@@ -45,6 +45,24 @@ class App extends React.Component {
       });
   }
 
+  searchJokes() {
+    this.setState({ isFetchingJoke: true });
+    
+    fetch("https://icanhazdadjoke.com/search", {
+      method: "GET",
+      headers: {
+        Accept: "application/json"
+      }
+    })
+    .then(response => response.json())
+    .then(json => {
+      console.log('search results:', json);
+    })
+    .catch(err => {
+      this.setState({ isFetchingJoke: false });
+    });
+  }
+
   render() {
     return (
       <div className="App">
