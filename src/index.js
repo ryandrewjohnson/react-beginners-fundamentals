@@ -11,6 +11,7 @@ class App extends React.Component {
     this.state = {
       isFetchingJoke: false,
       joke: null,
+      jokes: [],
       searchTerm: ''
     };
 
