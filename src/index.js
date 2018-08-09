@@ -74,10 +74,14 @@ class App extends React.Component {
     });
   }
 
+  onSearchSubmit() {
+    console.log('form submitted!');
+  }
+
   render() {
     return (
       <div className="App">
-        <form>
+        <form onSubmit={this.onSearchSubmit}>
           <input type="text" placeholder="Enter search term..." onChange={this.onSearchChange} />
           <button>Search</button>
           <button onClick={this.onTellJoke} disabled={this.state.isFetchingJoke}>Tell me a joke</button>
