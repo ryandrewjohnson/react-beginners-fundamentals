@@ -74,7 +74,8 @@ class App extends React.Component {
     });
   }
 
-  onSearchSubmit() {
+  onSearchSubmit(event) {
+    event.preventDefault();
     console.log('form submitted!');
   }
 
