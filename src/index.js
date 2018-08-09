@@ -27,7 +27,7 @@ class App extends React.Component {
     this.fetchJoke();
   }
 
-  onSearchChange(event) {
+  onSearchChange(event) { 
     this.setState({ searchTerm: event.target.value });
   }
 
@@ -82,6 +82,8 @@ class App extends React.Component {
           <button>Search</button>
           <button onClick={this.onTellJoke} disabled={this.state.isFetchingJoke}>Tell me a joke</button>
         </form>
+
+        <p>Your search term: {this.state.searchTerm}</p>
         
         <p>{this.state.isFetchingJoke ? 'Loading joke...' : this.state.joke}</p>
       </div>
