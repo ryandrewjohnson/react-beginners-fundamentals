@@ -18,6 +18,7 @@ class App extends React.Component {
     this.onTellJoke = this.onTellJoke.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
+    this.searchJokes = this.searchJokes.bind(this);
   }
 
   onTellJoke() {
@@ -82,7 +83,7 @@ class App extends React.Component {
         <form onSubmit={this.onSearchSubmit}>
           <input type="text" placeholder="Enter search term..." onChange={this.onSearchChange} />
           <button>Search</button>
-          <button onClick={this.onTellJoke} disabled={this.state.isFetchingJoke}>Tell me a joke</button>
+          <button onClick={this.searchJokes} disabled={this.state.isFetchingJoke}>Tell me a joke</button>
         </form>
         
         <p>{this.state.isFetchingJoke ? 'Loading joke...' : this.state.joke}</p>
