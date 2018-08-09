@@ -93,7 +93,7 @@ class App extends React.Component {
         
         <p>{this.state.isFetchingJoke ? 'Loading joke...' : this.state.joke}</p>
 
-         {this.state.jokes.map(item => <p>{item.joke}</p>)}
+         {this.state.jokes.map(item => <p key={item.id}>{item.joke}</p>)}
       </div>
     );
   }
