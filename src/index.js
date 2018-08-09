@@ -20,10 +20,6 @@ class App extends React.Component {
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.fetchJoke();
-  }
-
   onTellJoke() {
     this.fetchJoke();
   }
@@ -88,8 +84,6 @@ class App extends React.Component {
           <button>Search</button>
           <button onClick={this.onTellJoke} disabled={this.state.isFetchingJoke}>Tell me a joke</button>
         </form>
-
-        <p>Your search term: {this.state.searchTerm}</p>
         
         <p>{this.state.isFetchingJoke ? 'Loading joke...' : this.state.joke}</p>
 
