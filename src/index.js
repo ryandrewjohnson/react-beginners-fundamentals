@@ -55,7 +55,7 @@ class App extends React.Component {
   searchJokes() {
     this.setState({ isFetchingJoke: true });
     
-    fetch(`https://icanhazdadjoke.com/search?term=${this.state.searchTerm}`, {
+    fetch(`https://icanhazdadjoke.com/search?term=${this.state.searchTerm}&limit=5`, {
       method: "GET",
       headers: {
         Accept: "application/json"
