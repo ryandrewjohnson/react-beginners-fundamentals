@@ -91,6 +91,8 @@ class App extends React.Component {
         <p>Your search term: {this.state.searchTerm}</p>
         
         <p>{this.state.isFetchingJoke ? 'Loading joke...' : this.state.joke}</p>
+
+         {this.state.jokes.map(item => <p>{item.joke}</p>)}
       </div>
     );
   }
