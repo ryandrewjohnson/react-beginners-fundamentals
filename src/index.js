@@ -50,10 +50,10 @@ class App extends React.Component {
       });
   }
 
-  searchJokes() {
+  searchJokes(limit = 5) {
     this.setState({ isFetchingJoke: true });
     
-    fetch(`https://icanhazdadjoke.com/search?term=${this.state.searchTerm}&limit=5`, {
+    fetch(`https://icanhazdadjoke.com/search?term=${this.state.searchTerm}&limit=${limit}`, {
       method: "GET",
       headers: {
         Accept: "application/json"
