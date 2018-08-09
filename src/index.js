@@ -16,11 +16,11 @@ class App extends React.Component {
 
     this.onTellJoke = this.onTellJoke.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
+    this.onSearchSubmit = this.onSearchSubmit.bind(this);
   }
 
   componentDidMount() {
     this.fetchJoke();
-    this.searchJokes();
   }
 
   onTellJoke() {
@@ -76,7 +76,7 @@ class App extends React.Component {
 
   onSearchSubmit(event) {
     event.preventDefault();
-    console.log('form submitted!');
+    this.searchJokes(); 
   }
 
   render() {
