@@ -58,10 +58,11 @@ class App extends React.Component {
           <button>Search</button>
           <button onClick={() => this.searchJokes(1)} disabled={this.state.isFetchingJoke}>Tell me a joke</button>
         </form>
-        
-        <p>{this.state.isFetchingJoke ? 'Loading joke...' : this.state.joke}</p>
 
-         {this.state.jokes.map(item => <p key={item.id}>{item.joke}</p>)}
+        {this.state.isFetchingJoke 
+          ? 'Loading joke...'
+          : this.state.jokes.map(item => <p key={item.id}>{item.joke}</p>)
+        }
       </div>
     );
   }
