@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      isFetchingJoke: false,
+      isFetchingJokes: false,
       jokes: [],
       searchTerm: ''
     };
@@ -54,9 +54,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <SearchForm />
+        <SearchForm isFetchingJokes={this.state.isFetchingJokes} />
 
-        {this.state.isFetchingJoke 
+        {this.state.isFetchingJokes 
           ? 'Loading joke...'
           : this.state.jokes.map(item => <p key={item.id}>{item.joke}</p>)
         }
