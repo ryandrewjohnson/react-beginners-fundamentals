@@ -55,12 +55,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <SearchForm />
-        
-        <form onSubmit={this.onSearchSubmit}>
-          <input type="text" placeholder="Enter search term..." onChange={this.onSearchChange} />
-          <button>Search</button>
-          <button onClick={() => this.searchJokes(1)} disabled={this.state.isFetchingJoke}>I'm Feeling Funny 🤪</button>
-        </form>
 
         {this.state.isFetchingJoke 
           ? 'Loading joke...'
