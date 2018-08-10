@@ -15,39 +15,13 @@ class App extends React.Component {
       searchTerm: ''
     };
 
-    this.onTellJoke = this.onTellJoke.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
     this.searchJokes = this.searchJokes.bind(this);
   }
 
-  onTellJoke() {
-    this.fetchJoke();
-  }
-
   onSearchChange(event) { 
     this.setState({ searchTerm: event.target.value });
-  }
-
-  fetchJoke() {
-    this.setState({ isFetchingJoke: true });
-
-    fetch("https://icanhazdadjoke.com/", {
-      method: "GET",
-      headers: {
-        Accept: "application/json"
-      }
-    })
-      .then(response => response.json())
-      .then(json => {
-        this.setState({ 
-          isFetchingJoke: false,
-          joke: json.joke
-        });
-      })
-      .catch(err => {
-        this.setState({ isFetchingJoke: false });
-      });
   }
 
   searchJokes(limit = 5) {
