@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import SearchForm from './SearchForm';
 
 import "./styles.css";
 
@@ -53,6 +54,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <SearchForm />
+        
         <form onSubmit={this.onSearchSubmit}>
           <input type="text" placeholder="Enter search term..." onChange={this.onSearchChange} />
           <button>Search</button>
