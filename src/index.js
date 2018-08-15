@@ -54,7 +54,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <SearchForm isFetchingJokes={this.state.isFetchingJokes} />
+        <SearchForm 
+          isFetchingJokes={this.state.isFetchingJokes} 
+          onFormSubmit={this.onSearchSubmit}
+        />
 
         {this.state.isFetchingJokes 
           ? 'Loading joke...'
