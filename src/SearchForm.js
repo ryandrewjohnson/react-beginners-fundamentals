@@ -4,7 +4,7 @@ const SearchForm = props => (
   <form onSubmit={props.onFormSubmit}>
     <input type="text" placeholder="Enter search term..." onChange={(event) => props.onSearchTermChange(event.target.value)} />
     <button>Search</button>
-    <button onClick={() => this.searchJokes(1)} disabled={props.isFetchingJoke}>I'm Feeling Funny</button>
+    <button onClick={props.onFeelingLuckyClick} disabled={props.isFetchingJoke} type="button">I'm Feeling Funny</button>
   </form>
 );
 

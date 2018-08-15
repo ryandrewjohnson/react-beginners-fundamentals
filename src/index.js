@@ -26,6 +26,8 @@ class App extends React.Component {
 
   searchJokes(limit = 5) {
     this.setState({ isFetchingJoke: true });
+
+    console.log('limit', limit);
     
     fetch(`https://icanhazdadjoke.com/search?term=${this.state.searchTerm}&limit=${limit}`, {
       method: "GET",
@@ -58,6 +60,7 @@ class App extends React.Component {
           isFetchingJokes={this.state.isFetchingJokes} 
           onFormSubmit={this.onSearchSubmit}
           onSearchTermChange={this.onSearchChange}
+          onFeelingLuckyClick={() => this.searchJokes(1)}
         />
 
         {this.state.isFetchingJokes 
