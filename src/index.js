@@ -20,8 +20,8 @@ class App extends React.Component {
     this.searchJokes = this.searchJokes.bind(this);
   }
 
-  onSearchChange(event) { 
-    this.setState({ searchTerm: event.target.value });
+  onSearchChange(value) { 
+    this.setState({ searchTerm: value });
   }
 
   searchJokes(limit = 5) {
@@ -57,6 +57,7 @@ class App extends React.Component {
         <SearchForm 
           isFetchingJokes={this.state.isFetchingJokes} 
           onFormSubmit={this.onSearchSubmit}
+          onSearchTermChange={this.onSearchChange}
         />
 
         {this.state.isFetchingJokes 
