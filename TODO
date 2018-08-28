@@ -1,0 +1,8 @@
+03 - Components
+
+* Need to show a screen of the React Fragment docs when explaining that feature.
+
+04 - JSX
+
+* show something while introing JSX, maybe React Top-Level API docs page?
+* show Top-Level API docs when mentioned React.CreateElement compile example
